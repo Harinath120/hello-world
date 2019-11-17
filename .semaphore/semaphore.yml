@@ -12,6 +12,18 @@ blocks:
           commands:
             - checkout
             - ls
+      env_vars:
+        - name: FOO_1
+          value: BAR_1
+        - name: FOO_2
+          value: BAR_2
+      agent:
+        machine:
+          type: e1-standard-2
+          os_image: ubuntu1804
+        containers:
+          - name: main
+            image: 'semaphoreci/ubuntu:18.04'
   - name: Test
     task:
       jobs:
